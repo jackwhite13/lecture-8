@@ -1,8 +1,17 @@
+import os
+
 def main():
-    myFile = open("qbdata.txt", 'r')
+    print(os.getcwd)
+    myFile = open("Covid19-Confirmed.csv", 'r')
 
     for line in myFile:
-        print (line)
+
+        if "US" in line:
+            #print(line)
+            info = line.split(",")
+            last = len(info)-1
+            print(info[0], ",", info[1], ",", info[last])
+
 
     myFile.close()
 
